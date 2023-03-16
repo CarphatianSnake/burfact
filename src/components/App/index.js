@@ -1,5 +1,5 @@
 // Components
-import Header from '../Header/Header';
+import Header from '../Header';
 
 // Styles
 import './App.scss';

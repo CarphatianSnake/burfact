@@ -1,0 +1,14 @@
+.order-now {
+  width: 16rem;
+  height: 4rem;
+  background-color: #00b3fa;
+  transition: background-color .3s ease-out;
+
+  &:hover {
+    background-color: #0098f7;
+  }
+
+  &:active {
+    background-color: #017dca;
+  }
+}
