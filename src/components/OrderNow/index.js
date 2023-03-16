@@ -4,7 +4,7 @@ import './OrderNow.scss';
 // Component
 function OrderNow() {
   return (
-    <button className="order-now">
+    <button className="btn order-now">
       Order now
     </button>
   )

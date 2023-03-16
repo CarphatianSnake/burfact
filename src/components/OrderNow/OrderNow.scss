@@ -1,7 +1,12 @@
 .order-now {
-  width: 16rem;
-  height: 4rem;
   background-color: #00b3fa;
+  border: 0;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 700;
+  max-height: 4rem;
+  max-width: 16rem;
+  padding: .9rem 3.2rem .6rem;
   transition: background-color .3s ease-out;
 
   &:hover {

@@ -1,15 +1,16 @@
 // Components
 import Header from '../Header';
-
-// Styles
-import './App.scss';
+import Banner from '../Banner';
 
 // Component
 function App() {
   return (
-    <div className="App">
+    <>
       <Header />
-    </div>
+      <main>
+        <Banner />
+      </main>
+    </>
   );
 }
 

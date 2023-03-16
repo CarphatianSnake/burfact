@@ -10,9 +10,11 @@ import './Header.scss';
 function Header() {
   return (
     <header className='header'>
-      <Logo />
-      <Navigation />
-      <OrderNow />
+      <div className="header_wrapper">
+        <Logo />
+        <Navigation />
+        <OrderNow />
+      </div>
     </header>
   )
 }

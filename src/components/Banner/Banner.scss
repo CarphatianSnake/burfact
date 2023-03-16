@@ -1,0 +1,56 @@
+@import '../../variables.scss';
+
+.banner {
+  background: no-repeat top url('../../assets/img/banner-gradient.svg');
+  background-size: cover;
+  height: 60.4rem;
+
+  &_wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $desktop-max-width;
+  }
+
+  &_content {
+    margin-top: 14rem;
+
+    &_heading {
+      font-size: 8.4rem;
+      font-weight: 900;
+      margin: 0;
+    }
+
+    &_text {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin: 2rem 0;
+    }
+
+    &_btn {
+      background-color: #f6e224;
+      border-radius: 1rem;
+      display: block;
+      font-weight: 700;
+      max-height: 4rem;
+      max-width: 28rem;
+      padding: .9rem 2.6rem .6rem;
+      text-align: center;
+      transition: background-color .3s ease-out;
+
+      &:hover {
+        background-color: #ee9c10;
+      }
+
+      &:active {
+        background-color: #d68d10;
+      }
+
+    }
+
+  }
+
+  &_image {
+    margin-top: 5rem;
+  }
+}

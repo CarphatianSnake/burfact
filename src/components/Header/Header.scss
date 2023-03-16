@@ -1,8 +1,18 @@
+@import '../../variables.scss';
+
 .header {
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .29);
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10rem;
-  padding: 2.9rem 0;
+  z-index: 1;
+
+  &_wrapper {
+    align-items: center;
+    display: flex;
+    gap: 10rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: $desktop-max-width;
+    padding: 2.9rem 0;
+  }
 }
