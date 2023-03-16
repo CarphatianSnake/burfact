@@ -1,0 +1,70 @@
+@import '../../variables.scss';
+
+.ingredients {
+  margin: 15rem auto 0;
+  max-width: $desktop-max-width;
+
+  &_small-heading {
+    margin: 2rem auto 0;
+    max-width: 69rem;
+    text-align: center;
+  }
+
+  &_carousele {
+    display: flex;
+    gap: 5rem;
+    width: 100%;
+    transition: transform .3s ease-out;
+    transform: translateX(14rem);
+
+    &_wrapper {
+      margin: 4rem 0;
+      overflow: hidden;
+      padding: 1rem;
+      position: relative;
+
+      &::before, &::after {
+        content: '';
+        height: 100%;
+        position: absolute;
+        width: 18rem;
+        z-index: 1;
+      }
+
+      &::before {
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), #FFFFFF);
+        left: 0;
+        top: 0;
+      }
+
+      &::after {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), #FFFFFF);
+        right: 0;
+        top: 0;
+      }
+
+    }
+
+    &_item {
+      box-shadow: $shadow;
+      border-radius: 2.6rem;
+      display: flex;
+      flex-direction: column;
+      height: 24rem;
+      justify-content: space-between;
+      padding: 2rem 1rem;
+      width: 23rem;
+
+      &_image {
+        max-height: 16rem;
+      }
+    }
+  }
+
+  &_description {
+    margin: 0 auto;
+    max-width: 90rem;
+    text-align: center;
+  }
+
+}

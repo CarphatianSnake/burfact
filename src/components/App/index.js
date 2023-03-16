@@ -1,6 +1,7 @@
 // Components
 import Header from '../Header';
 import Banner from '../Banner';
+import Ingredients from '../Ingredients';
 
 // Component
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <main>
         <Banner />
+        <Ingredients />
       </main>
     </>
   );

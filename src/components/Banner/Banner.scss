@@ -1,9 +1,19 @@
 @import '../../variables.scss';
 
 .banner {
-  background: no-repeat top url('../../assets/img/banner-gradient.svg');
-  background-size: cover;
-  height: 60.4rem;
+  position: relative;
+
+  &::after {
+    background: no-repeat top url('../../assets/img/banner-gradient.svg');
+    background-size: cover;
+    content: '';
+    height: 60.4rem;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
 
   &_wrapper {
     display: flex;
@@ -15,16 +25,8 @@
   &_content {
     margin-top: 14rem;
 
-    &_heading {
-      font-size: 8.4rem;
-      font-weight: 900;
-      margin: 0;
-    }
-
-    &_text {
-      font-size: 2.4rem;
-      font-weight: 700;
-      margin: 2rem 0;
+    &_small-heading {
+      margin-bottom: 2rem;
     }
 
     &_btn {

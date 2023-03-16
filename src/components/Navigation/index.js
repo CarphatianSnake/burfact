@@ -1,3 +1,6 @@
+// Utils
+import { capitalize } from '../../utils/capitalize';
+
 // Styles
 import './Navigation.scss';
 
@@ -8,11 +11,9 @@ function Navigation() {
 
   const navSections = navSectionsNames.map((section) => {
 
-    const capitalize = section[0].toUpperCase() + section.slice(1);
-
     return (
       <li key={section} className='navigation_list_item'>
-        <a href={`#${section}`} className='navigation_list_item_link' title={capitalize}>
+        <a href={`#${section}`} className='navigation_list_item_link' title={capitalize(section)}>
           {section.toUpperCase()}
         </a>
       </li>

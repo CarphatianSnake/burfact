@@ -10,11 +10,11 @@ function Banner() {
     <section className="banner">
       <div className="banner_wrapper">
         <div className="banner_content">
-          <h1 className="banner_content_heading">Burger Factory</h1>
-          <p className="banner_content_text">Your dreamed burger close to your locations!</p>
-          <a href="#ingredients" className="banner_content_btn">Discover the ingredients</a>
+          <h1>Burger Factory</h1>
+          <h3 className="banner_content_small-heading">Your dreamed burger close to your locations!</h3>
+          <a href="#ingredient" className="banner_content_btn">Discover the ingredients</a>
         </div>
-        <img src={bannerImage} className='banner_image' alt="Burger Factory" />
+        <img loading='lazy' src={bannerImage} className='banner_image' alt="Burger Factory" />
       </div>
     </section>
   )
