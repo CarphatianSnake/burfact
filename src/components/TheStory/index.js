@@ -7,7 +7,7 @@ import theStoryImg from '../../assets/img/the-story.jpg';
 // Component
 function TheStory() {
   return (
-    <section className="the-story">
+    <section className="the-story" id="story">
       <div className="the-story_description">
         <h2 className="the-story_description_heading">The Story</h2>
         <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis id arcu vel maximus.</h3>

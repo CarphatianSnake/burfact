@@ -1,0 +1,53 @@
+@import '../../variables.scss';
+
+.burgers {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  margin: 15rem auto 0;
+  max-width: $desktop-max-width;
+  width: 100%;
+
+  &_list {
+    display: flex;
+    gap: 2rem;
+
+    &_item {
+      border-radius: 2.6rem;
+      box-shadow: $shadow;
+      padding: 2rem;
+      width: 44rem;
+  
+      &_heading {
+        margin: 0;
+        text-align: center;
+      }
+
+      &_image {
+        margin: 6rem auto 4rem;
+        max-width: 22rem;
+      }
+
+      &_ingredient {
+        padding-top: 1.5rem;
+
+        &_item {
+          font-size: 1.4rem;
+          margin-top: 1rem;
+        }
+      }
+
+      &_btn {
+        background: none;
+        color: #008bf6;
+        display: block;
+        height: auto;
+        margin: 0 0 0 auto;
+        padding: 0;
+      }
+    }
+  }
+
+  
+}
