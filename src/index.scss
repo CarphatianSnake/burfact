@@ -9,11 +9,19 @@
 html {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-size: 10px;
+  font-size: 8px;
   color: $text-color;
   letter-spacing: 0;
   line-height: 1.5;
   box-sizing: border-box;
+  
+  @media screen and #{$small-desktop} {
+    font-size: 8px;
+  }
+
+  @media screen and #{$desktop} {
+    font-size: 10px;
+  }
 }
 
 body {

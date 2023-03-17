@@ -3,4 +3,6 @@ $blue-hover: #0098f7; // blue color for hover effects
 $blue-active: #017dca; // blue color for active effects
 $shadow: 0 3px 6px rgba(0, 0, 0, .29); // standart shadow
 
-$desktop-max-width: 1352px; // max-width for desktop layout
+$desktop-max-width: 135rem;
+$desktop: '(min-width: 1440px)';
+$small-desktop: '(min-width: 1152px)'; 
