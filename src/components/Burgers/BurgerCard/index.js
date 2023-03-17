@@ -32,7 +32,7 @@ function BurgerCard({ burger, setIsOpen, isOpen, index }) {
       setTimeout(() => {
         setBtnText('Reduce');
         setBtnTextClass('burger-card_btn_text');
-      }, 150)
+      }, 250)
     } else {
       setBtnTextClass('burger-card_btn_text transparent');
       setIngredientsClass('burger-card_ingredient transparent');
@@ -42,7 +42,7 @@ function BurgerCard({ burger, setIsOpen, isOpen, index }) {
       setTimeout(() => {
         setBtnText('Details');
         setBtnTextClass('burger-card_btn_text');
-      }, 150)
+      }, 250)
     }
     // eslint-disable-next-line
   }, [isCardOpen])

@@ -1,0 +1,18 @@
+@import '../../variables.scss';
+
+.location {
+  margin: 15rem auto 0;
+  max-width: $desktop-max-width;
+
+  &_contacts {
+    display: flex;
+    font-size: 2.4rem;
+    gap: 3rem;
+    justify-content: center;
+    margin-top: 3rem;
+
+    &_heading {
+      font-weight: 700;
+    }
+  }
+}

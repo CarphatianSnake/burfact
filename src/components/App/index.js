@@ -4,6 +4,8 @@ import Banner from '../Banner';
 import Ingredients from '../Ingredients';
 import TheStory from '../TheStory';
 import Burgers from '../Burgers';
+import Location from '../Location';
+import Footer from '../Footer';
 
 // Component
 function App() {
@@ -15,7 +17,9 @@ function App() {
         <Ingredients />
         <TheStory />
         <Burgers />
+        <Location />
       </main>
+      <Footer />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 // Components
 import BurgerCard from '../BurgerCard';
@@ -7,19 +7,23 @@ import BurgerCard from '../BurgerCard';
 import './BurgerList.scss';
 
 // Data
-import burgersData from '../burgersData';
+import burgersData from '../../../assets/data/burgersData';
 
 // Component
 function BurgerList() {
 
   const [ isOpen, setIsOpen ] = useState(burgersData.map(() => false));
 
-  useEffect(() => {
-    console.log(isOpen);
-  }, [isOpen])
-
   const burgers = burgersData.map((burger, index) => {
-    return <BurgerCard key={burger.name} burger={burger} setIsOpen={setIsOpen} isOpen={isOpen} index={index} />
+    return (
+      <BurgerCard
+        key={burger.name}
+        burger={burger}
+        setIsOpen={setIsOpen}
+        isOpen={isOpen}
+        index={index}
+      />
+    )
   });
 
   return (

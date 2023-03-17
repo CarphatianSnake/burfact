@@ -8,7 +8,7 @@ import { capitalize } from '../../utils/capitalize';
 import './Ingredients.scss';
 
 // Data
-import ingredientsData from './ingredientsData';
+import ingredientsData from '../../assets/data/ingredientsData';
 
 // Component
 function Ingredients() {
