@@ -15,4 +15,12 @@
       font-weight: 700;
     }
   }
+
+  &_map {
+    display: block;
+    border-radius: 3rem;
+    height: 48rem;
+    margin: 3rem auto 0;
+    width: 86rem;
+  }
 }
