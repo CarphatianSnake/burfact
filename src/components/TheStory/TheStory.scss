@@ -1,0 +1,26 @@
+@import '../../variables.scss';
+
+.the-story {
+  display: flex;
+  gap: 5rem;
+  justify-content: space-between;
+  margin: 15rem auto 0;
+  max-width: $desktop-max-width;
+
+  &_description {
+    width: 100%;
+
+    &_heading {
+      text-align: left;
+    }
+
+    &_text {
+      margin-top: 5rem;
+    }
+  }
+
+  &_image {
+    border-radius: 3rem;
+    max-width: 63.5rem;
+  }
+}

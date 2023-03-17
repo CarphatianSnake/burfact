@@ -2,6 +2,7 @@
 import Header from '../Header';
 import Banner from '../Banner';
 import Ingredients from '../Ingredients';
+import TheStory from '../TheStory';
 
 // Component
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <main>
         <Banner />
         <Ingredients />
+        <TheStory />
       </main>
     </>
   );
