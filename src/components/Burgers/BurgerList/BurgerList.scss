@@ -1,0 +1,13 @@
+.burgers_list {
+  display: flex;
+  gap: 2rem;
+  transition: height .3s ease-out;
+}
+
+.open {
+  height: 53rem
+}
+
+.close {
+  height: 41rem;
+}

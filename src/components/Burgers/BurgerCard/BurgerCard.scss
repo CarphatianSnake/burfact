@@ -1,0 +1,73 @@
+@import '../../../variables.scss';
+
+.burger-card {
+  position: relative;
+  border-radius: 2.6rem;
+  box-shadow: $shadow;
+  overflow: hidden;
+  padding: 2rem;
+  width: 44rem;
+  transition: max-height .3s ease-out;
+
+  &_heading {
+    margin: 0;
+    text-align: center;
+  }
+
+  &_image {
+    margin: 6rem auto 4rem;
+    max-width: 22rem;
+  }
+
+  &_ingredient {
+    padding-top: 1.5rem;
+    transition: opacity .3s ease-out;
+
+    &_item {
+      font-size: 1.4rem;
+      margin-top: 1rem;
+    }
+  }
+
+  &_btn {
+    position: absolute;
+    background: none;
+    display: block;
+    height: auto;
+    margin: 0 0 0 auto;
+    padding: 0;
+    bottom: 2rem;
+    right: 2rem;
+
+    &_text {
+      color: #008bf6;
+      transition: opacity .3s ease-out;
+
+      &:hover {
+        color: $blue-hover;
+      }
+
+      &:active {
+        color: $blue-active;
+      }
+
+    }
+  }
+}
+
+.display_none {
+  display: none;
+}
+
+.max-height {
+  &__open {
+    max-height: 53rem;
+  }
+  &__close {
+    max-height: 40.4rem;
+  }
+}
+
+.transparent {
+  opacity: 0;
+}

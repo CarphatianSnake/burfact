@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .order-now {
   background-color: #00b3fa;
   border: 0;
@@ -10,10 +12,10 @@
   transition: background-color .3s ease-out;
 
   &:hover {
-    background-color: #0098f7;
+    background-color: $blue-hover;
   }
 
   &:active {
-    background-color: #017dca;
+    background-color: $blue-active;
   }
 }
