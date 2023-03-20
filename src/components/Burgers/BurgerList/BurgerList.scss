@@ -1,13 +1,21 @@
+@import '../../../variables.scss';
+
 .burgers_list {
   display: flex;
   gap: 2rem;
   transition: height .3s ease-out;
-}
 
-.open {
-  height: 53rem
-}
+  @media screen and #{$tablet} {
+    flex-direction: column;
+    max-width: $tablet-max-width;
+  }
 
-.close {
-  height: 41rem;
+  @media screen and #{$big-tablet} {
+    max-width: $big-tablet-max-width;
+  }
+
+  @media screen and #{$small-desktop} {
+    flex-direction: row;
+    max-width: $desktop-max-width;
+  }
 }

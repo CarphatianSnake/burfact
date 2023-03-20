@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import './BurgerCard.scss';
 
 // Component
-function BurgerCard({ burger, setIsOpen, isOpen, index }) {
+function BurgerCard({ burger, index }) {
 
   const [ isCardOpen, setIsCardOpen ] = useState(false); // state for card open/close status
   const [ btnText, setBtnText ] = useState('Details'); // state of button text
@@ -20,30 +20,36 @@ function BurgerCard({ burger, setIsOpen, isOpen, index }) {
   }
 
   useEffect(() => {
-    const isOpenArr = [...isOpen]; // clone open status array, that comes from props
-    isOpenArr[index] = isCardOpen; // set open status for card by index at cloned status array
-    setIsOpen(isOpenArr); // change state, that comes from props, for cloned status array
 
     if (isCardOpen) {
+
       setBtnTextClass('burger-card_btn_text transparent'); // make button text transparent on start of transition
+
       setIngredientsClass('burger-card_ingredient transparent'); // make ingredients list transparent on start of transition by removing display: block property
+
       setTimeout(() => {
         setIngredientsClass('burger-card_ingredient'); // remove transparency on ingredients list for smooth transition
       }, 50)
+      
       setTimeout(() => {
         setBtnText('Reduce'); // Change button text on click
         setBtnTextClass('burger-card_btn_text'); // remove transparency on button for smooth transition
       }, 250)
-    }else {
+
+    } else {
+
       setBtnTextClass('burger-card_btn_text transparent'); // make button text transparent on start of transition
       setIngredientsClass('burger-card_ingredient transparent'); // make ingredients list transparent on start of transition
+
       setTimeout(() => {
         setIngredientsClass('burger-card_ingredient transparent display_none'); // hide ingredients list after transition
       }, 300)
+
       setTimeout(() => {
         setBtnText('Details'); // Change button text on click
         setBtnTextClass('burger-card_btn_text'); // remove transparency on button for smooth transition
       }, 250)
+
     }
     // eslint-disable-next-line
   }, [isCardOpen])

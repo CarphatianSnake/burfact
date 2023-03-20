@@ -7,7 +7,7 @@
   overflow: hidden;
   padding: 2rem;
   width: 44rem;
-  transition: max-height .3s ease-out;
+  transition: height .3s ease-out;
 
   &_heading {
     margin: 0;
@@ -15,12 +15,12 @@
   }
 
   &_image {
-    margin: 6rem auto 4rem;
+    margin: 6rem auto 6.7rem;
     max-width: 22rem;
   }
 
   &_ingredient {
-    padding-top: 1.5rem;
+    padding-top: 1.25rem;
     transition: opacity .3s ease-out;
 
     &_item {
@@ -61,10 +61,10 @@
 
 .max-height {
   &__open {
-    max-height: 53rem;
+    height: 55rem;
   }
   &__close {
-    max-height: 40.4rem;
+    height: 40.4rem;
   }
 }
 
