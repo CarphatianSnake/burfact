@@ -1,9 +1,12 @@
 .carousele {
   display: flex;
+  position: absolute;
+  top: 1rem;
   transition: transform .3s ease-out;
   transform: translateX(0);
 
   &_wrapper {
+    height: 26rem;
     margin: 4rem 0;
     overflow: hidden;
     padding: 1rem;

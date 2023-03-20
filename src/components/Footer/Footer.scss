@@ -2,7 +2,11 @@
 
 .footer {
   background-color: #f5f5f5;
-  margin-top: 15rem;
+  margin-top: 10rem;
+
+  @media screen and #{$small-desktop} {
+    margin-top: 15rem;
+  }
 
   &_wrapper {
     align-items: center;

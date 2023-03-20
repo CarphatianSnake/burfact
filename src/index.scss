@@ -14,8 +14,8 @@ html {
   letter-spacing: 0;
   line-height: 1.5;
   box-sizing: border-box;
-  
-  @media screen and #{$small-desktop} {
+
+  @media screen and #{$tablet} {
     font-size: 8px;
   }
 
@@ -54,6 +54,11 @@ h1 {
   font-size: 8.4rem;
   font-weight: 900;
   margin: 0;
+
+  @media screen and #{$tablet} {
+    font-size: 7rem;
+  }
+
 }
 
 h2 {
@@ -67,6 +72,10 @@ h3 {
   font-size: 2.4rem;
   font-weight: 700;
   margin: 2rem 0 0;
+
+  @media screen and #{$tablet} {
+    font-size: 2rem;
+  }
 }
 
 h4 {
@@ -85,4 +94,12 @@ img {
   display: block;
   object-fit: contain;
   max-width: 100%;
+}
+
+section {
+  margin: 10rem auto 0;
+
+  @media screen and #{$small-desktop} {
+    margin: 15rem auto 0;
+  }
 }

@@ -12,5 +12,17 @@
     margin: 0 auto;
     max-width: $desktop-max-width;
     padding: 2.9rem 0;
+  
+    @media screen and #{$tablet} {
+      max-width: $tablet-max-width;
+    }
+  
+    @media screen and #{$big-tablet} {
+      max-width: $big-tablet-max-width;
+    }
+  
+    @media screen and #{$small-desktop} {
+      max-width: $desktop-max-width;
+    }
   }
 }

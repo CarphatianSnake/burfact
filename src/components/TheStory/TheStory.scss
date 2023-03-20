@@ -1,26 +1,61 @@
 @import '../../variables.scss';
 
 .the-story {
-  display: flex;
-  gap: 5rem;
-  justify-content: space-between;
-  margin: 15rem auto 0;
-  max-width: $desktop-max-width;
+  display: grid;
+  gap: 2rem;
+  grid-template-areas: 
+    "heading"
+    "smallHeading"
+    "image"
+    "text";
 
-  &_description {
-    width: 100%;
+  @media screen and #{$tablet} {
+    max-width: $tablet-max-width;
+  }
 
-    &_heading {
+  @media screen and #{$big-tablet} {
+    max-width: $big-tablet-max-width;
+  }
+
+  @media screen and #{$small-desktop} {
+    max-width: $desktop-max-width;
+    grid: auto 63.5rem;
+    grid-template-areas: 
+      "heading image"
+      "smallHeading image"
+      "text image";
+    grid-template-columns: auto 63.5rem;
+  }
+
+  &_heading {
+    grid-area: heading;
+
+    @media screen and #{$small-desktop} {
       text-align: left;
     }
+  }
 
-    &_text {
-      margin-top: 5rem;
+  &_small-heading {
+    grid-area: smallHeading;
+    margin-top: 0;
+    text-align: center;
+
+    @media screen and #{$small-desktop} {
+      text-align: left;
+    }
+  }
+
+  &_text {
+    grid-area: text;
+    text-align: center;
+
+    @media screen and #{$small-desktop} {
+      text-align: left;
     }
   }
 
   &_image {
-    border-radius: 3rem;
-    max-width: 63.5rem;
+    grid-area: image;
+    margin: 0 auto;
   }
 }

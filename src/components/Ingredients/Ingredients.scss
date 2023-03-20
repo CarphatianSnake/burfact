@@ -1,8 +1,19 @@
 @import '../../variables.scss';
 
 .ingredients {
-  margin: 15rem auto 0;
   max-width: $desktop-max-width;
+
+  @media screen and #{$tablet} {
+    max-width: $tablet-max-width;
+  }
+
+  @media screen and #{$big-tablet} {
+    max-width: $big-tablet-max-width;
+  }
+
+  @media screen and #{$small-desktop} {
+    max-width: $desktop-max-width;
+  }
 
   &_small-heading {
     margin: 2rem auto 0;
