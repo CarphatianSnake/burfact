@@ -1,10 +1,11 @@
 @import '../../variables.scss';
 
 .navigation {
+  display: none;
   flex: 1;
 
-  @media screen and #{$tablet} {
-    display: none;
+  @media screen and #{$small-desktop} {
+    display: block;
   }
   
   &_list {
