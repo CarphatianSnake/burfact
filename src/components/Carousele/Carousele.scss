@@ -1,13 +1,20 @@
+@import '../../variables.scss';
+
 .carousele {
   display: flex;
+  gap: 2.5rem;
   position: absolute;
   top: 1rem;
   transition: transform .3s ease-out;
   transform: translateX(0);
 
+  @media screen and #{$tablet} {
+    gap: 5rem;
+  }
+
   &_wrapper {
-    height: 26rem;
-    margin: 4rem 0;
+    height: 21rem;
+    margin: 2rem 0;
     overflow: hidden;
     padding: 1rem;
     position: relative;
@@ -30,6 +37,11 @@
       background: linear-gradient(to right, rgba(255, 255, 255, 0), #FFFFFF);
       right: 0;
       top: 0;
+    }
+
+    @media screen and #{$tablet} {
+      height: 26rem;
+      margin: 4rem 0;
     }
 
   }

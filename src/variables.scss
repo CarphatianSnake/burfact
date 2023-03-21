@@ -6,7 +6,10 @@ $shadow: 0 3px 6px rgba(0, 0, 0, .29); // standart shadow
 $desktop-max-width: 135rem;
 $big-tablet-max-width: 90rem;
 $tablet-max-width: 70rem;
+$mobile-max-width: 43rem;
+$small-mobile-max-width: 36rem;
 $desktop: '(min-width: 1440px)';
 $small-desktop: '(min-width: 1152px)'; 
 $tablet: '(min-width: 601px)';
 $big-tablet: '(min-width: 801px)'; 
+$mobile: '(min-width: 390px)'; 

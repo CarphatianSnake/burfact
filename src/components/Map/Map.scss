@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .map {
   border-radius: 3rem;
   display: block;
@@ -8,7 +10,11 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    height: 48rem;
+    height: 38rem;
     margin: 3rem auto 0;
+
+    @media screen and #{$tablet} {
+      height: 48rem;
+    }
   }
 }

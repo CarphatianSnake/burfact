@@ -1,9 +1,15 @@
 @import '../../variables.scss';
 
 .ingredients {
-  max-width: $desktop-max-width;
+  margin-top: 12rem;
+  max-width: $small-mobile-max-width;
+
+  @media screen and #{$mobile} {
+    max-width: $mobile-max-width;
+  }
 
   @media screen and #{$tablet} {
+    margin-top: 10rem;
     max-width: $tablet-max-width;
   }
 
@@ -26,18 +32,26 @@
     border-radius: 2.6rem;
     display: flex;
     flex-direction: column;
-    height: 24rem;
+    height: 18.75rem;
     justify-content: space-between;
-    margin-right: 5rem;
     padding: 2rem 1rem;
-    width: 23rem;
+    width: 18rem;
 
     &:last-child {
       margin-right: 0;
     }
 
+    @media screen and #{$tablet} {
+      height: 24rem;
+      width: 23rem;
+    }
+
     &_image {
-      max-height: 16rem;
+      max-height: 10rem;
+
+      @media screen and #{$tablet} {
+        max-height: 16rem;
+      }
     }
   }
 

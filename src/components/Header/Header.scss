@@ -7,13 +7,17 @@
   &_wrapper {
     align-items: center;
     display: flex;
-    gap: 10rem;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: $desktop-max-width;
+    max-width: $small-mobile-max-width;
     padding: 2.9rem 0;
+
+    @media screen and #{$mobile} {
+      max-width: $mobile-max-width;
+    }
   
     @media screen and #{$tablet} {
+      gap: 10rem;
       max-width: $tablet-max-width;
     }
   

@@ -8,6 +8,11 @@
     "smallHeading"
     "image"
     "text";
+  max-width: $small-mobile-max-width;
+
+  @media screen and #{$mobile} {
+    max-width: $mobile-max-width;
+  }
 
   @media screen and #{$tablet} {
     max-width: $tablet-max-width;

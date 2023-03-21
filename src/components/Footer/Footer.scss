@@ -14,7 +14,11 @@
     height: 12.5rem;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: $desktop-max-width;
+    max-width: $small-mobile-max-width;
+
+    @media screen and #{$mobile} {
+      max-width: $mobile-max-width;
+    }
 
     @media screen and #{$tablet} {
       max-width: $tablet-max-width;

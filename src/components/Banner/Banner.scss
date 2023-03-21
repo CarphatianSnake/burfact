@@ -2,22 +2,27 @@
 
 .banner {
   margin-top: 0;
-  overflow: hidden;
   position: relative;
 
   &::after {
     background: no-repeat top url('../../assets/img/banner-gradient.svg');
     background-size: cover;
     content: '';
-    height: 60.4rem;
+    height: 40rem;
     left: 0;
     position: absolute;
     top: 0;
     width: 100%;
     z-index: -1;
 
+    @media screen and #{$mobile} {
+      height: 36rem;
+      overflow: hidden;
+    }
+
     @media screen and #{$tablet} {
       height: 48rem;
+      overflow: hidden;
     }
 
     @media screen and #{$small-desktop} {
@@ -29,7 +34,11 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: $desktop-max-width;
+    max-width: $small-mobile-max-width;
+
+    @media screen and #{$mobile} {
+      max-width: $mobile-max-width;
+    }
 
     @media screen and #{$tablet} {
       max-width: $tablet-max-width;
@@ -46,9 +55,9 @@
   }
 
   &_content {
-    margin-top: 14rem;
+    margin-top: 3rem;
 
-    @media screen and #{$tablet} {
+    @media screen and #{$mobile} {
       margin-top: 5rem;
     }
   
@@ -69,18 +78,25 @@
       border-radius: 1rem;
       display: block;
       font-weight: 700;
+      margin: 0 auto;
       max-height: 4rem;
       max-width: 28rem;
       padding: .75rem 2.6rem .6rem;
       text-align: center;
       transition: background-color .3s ease-out;
-
-      &:hover {
-        background-color: #ee9c10;
-      }
-
+      
       &:active {
         background-color: #d68d10;
+      }
+
+      @media screen and #{$tablet} {
+        margin: 0;
+      }
+
+      @media screen and #{$small-desktop} {
+        &:hover {
+          background-color: #ee9c10;
+        }
       }
 
     }
@@ -88,10 +104,12 @@
   }
 
   &_image {
+    display: none;
     margin-top: 5rem;
     max-height: 64rem;
   
     @media screen and #{$tablet} {
+      display: block;
       margin-left: 2rem;
       margin-top: 3rem;
       max-height: 44rem;

@@ -2,11 +2,16 @@
 
 .burgers_list {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
+  max-width: $small-mobile-max-width;
   transition: height .3s ease-out;
 
+  @media screen and #{$mobile} {
+    max-width: $mobile-max-width;
+  }
+
   @media screen and #{$tablet} {
-    flex-direction: column;
     max-width: $tablet-max-width;
   }
 

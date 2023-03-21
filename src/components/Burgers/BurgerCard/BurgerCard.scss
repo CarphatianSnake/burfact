@@ -6,8 +6,12 @@
   box-shadow: $shadow;
   overflow: hidden;
   padding: 2rem;
-  width: 44rem;
+  width: 34rem;
   transition: height .3s ease-out;
+
+  @media screen and #{$tablet} {
+    width: 44rem;
+  }
 
   &_heading {
     margin: 0;
@@ -15,8 +19,12 @@
   }
 
   &_image {
-    margin: 6rem auto 6.7rem;
+    margin: 2rem auto 2.3rem;
     max-width: 22rem;
+
+    @media screen and #{$tablet} {
+      margin: 6rem auto 6.7rem;
+    }
   }
 
   &_ingredient {
@@ -43,12 +51,14 @@
       color: #008bf6;
       transition: opacity .3s ease-out;
 
-      &:hover {
-        color: $blue-hover;
-      }
-
       &:active {
         color: $blue-active;
+      }
+
+      @media screen and #{$small-desktop} {
+        &:hover {
+          color: $blue-hover;
+        }
       }
 
     }
@@ -61,10 +71,18 @@
 
 .max-height {
   &__open {
-    height: 55rem;
+    height: 47rem;
+
+    @media screen and #{$tablet} {
+      height: 55rem;
+    }
   }
   &__close {
-    height: 40.4rem;
+    height: 35.2rem;
+
+    @media screen and #{$tablet} {
+      height: 40.4rem;
+    }
   }
 }
 
