@@ -10,12 +10,11 @@ import burgersData from '../../../assets/data/burgersData';
 // Component
 function BurgerList() {
 
-  const burgers = burgersData.map((burger, index) => {
+  const burgers = burgersData.map((burger) => {
     return (
       <BurgerCard
         key={burger.name}
         burger={burger}
-        index={index}
       />
     )
   });

@@ -26,47 +26,6 @@
       margin: 6rem auto 6.7rem;
     }
   }
-
-  &_ingredient {
-    padding-top: 1.25rem;
-    transition: opacity .3s ease-out;
-
-    &_item {
-      font-size: 1.4rem;
-      margin-top: 1rem;
-    }
-  }
-
-  &_btn {
-    position: absolute;
-    background: none;
-    display: block;
-    height: auto;
-    margin: 0 0 0 auto;
-    padding: 0;
-    bottom: 2rem;
-    right: 2rem;
-
-    &_text {
-      color: #008bf6;
-      transition: opacity .3s ease-out;
-
-      &:active {
-        color: $blue-active;
-      }
-
-      @media screen and #{$small-desktop} {
-        &:hover {
-          color: $blue-hover;
-        }
-      }
-
-    }
-  }
-}
-
-.display_none {
-  display: none;
 }
 
 .max-height {
@@ -84,8 +43,4 @@
       height: 40.4rem;
     }
   }
-}
-
-.transparent {
-  opacity: 0;
 }
