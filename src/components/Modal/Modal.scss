@@ -1,0 +1,57 @@
+@import '../../variables.scss';
+
+.modal {
+  align-items: center;
+  background-color: #fff;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: transform .3s ease-out;
+  width: 100%;
+  z-index: 1;
+
+  &_wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5rem;
+    height: 100vh;
+    max-width: $small-mobile-max-width;
+    position: relative;
+    width: 100%;
+
+    @media screen and #{$mobile} {
+      max-width: $mobile-max-width;
+    }
+  
+    @media screen and #{$tablet} {
+      gap: 10rem;
+      max-width: $tablet-max-width;
+    }
+  
+    @media screen and #{$big-tablet} {
+      max-width: $big-tablet-max-width;
+    }
+  }
+
+  &_close-btn {
+    background-color: transparent;
+    background-image: url('../../assets//img/cross-icon.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 4rem;
+    position: absolute;
+    right: 0;
+    top: 4rem;
+    width: 4rem;
+  }
+
+  &__hide {
+    transform: translatex(100%);
+  }
+}
