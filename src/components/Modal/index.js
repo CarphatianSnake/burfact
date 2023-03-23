@@ -5,7 +5,7 @@ import OrderNow from '../OrderNow';
 // Styles
 import './Modal.scss';
 
-// Handler for closin modal. Exported to use at Navigation component
+// Handler for closing modal. Exported to use at Navigation component
 export function onModalClose(setIsModalOpen) {
   setIsModalOpen(false);
   document.body.classList.remove('block-scroll');

@@ -15,6 +15,7 @@
     }
     
     &_image {
+      background-color: transparent;
       cursor: pointer;
       width: 8rem;
       height: 8rem;
@@ -36,6 +37,11 @@
 
       &:active {
         opacity: 1;
+      }
+
+      &:disabled {
+        cursor: default;
+        opacity: 0;
       }
 
       &__left {
@@ -75,7 +81,7 @@
   &_items {
     display: flex;
     gap: 2.5rem;
-    padding: 1rem;
+    padding: 1rem 0;
     position: absolute;
     transition: transform .3s ease-out;
     transform: translateX(0);
