@@ -17,7 +17,8 @@ function Map() {
   const position = useMemo(() => ({lat: 46.524431518785924, lng: 6.6330580436780995}), []);
 
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    // googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: '',
   });
   
   return (

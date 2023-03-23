@@ -1,48 +1,87 @@
 @import '../../variables.scss';
 
 .carousele {
-  display: flex;
-  gap: 2.5rem;
-  position: absolute;
-  top: 1rem;
-  transition: transform .3s ease-out;
-  transform: translateX(0);
+  height: 21rem;
+  margin: 2rem 0;
 
-  @media screen and #{$tablet} {
-    gap: 5rem;
-  }
+  &_arrow {
+    height: 100%;
+    position: absolute;
+    width: 10rem;
+    z-index: 1;
 
-  &_wrapper {
-    height: 21rem;
-    margin: 2rem 0;
-    overflow: hidden;
-    padding: 1rem;
-    position: relative;
-
-    &::before, &::after {
-      content: '';
-      height: 100%;
-      position: absolute;
+    @media screen and #{$tablet} {
       width: 18rem;
-      z-index: 1;
+    }
+    
+    &_image {
+      cursor: pointer;
+      width: 8rem;
+      height: 8rem;
+      top: calc(50% - 4rem);
+      background-image: url('../../assets/img/arrow.svg');
+      background-size: contain;
+      position: absolute;
+      transition: all .3s ease-out;
+      opacity: .6;
+
+      @media screen and #{$small-desktop} {
+        &:hover {
+          width: 9rem;
+          height: 9rem;
+          top: calc(50% - 4.5rem);
+          opacity: .75;
+        }
+      }
+
+      &:active {
+        opacity: 1;
+      }
+
+      &__left {
+        left: -1.5rem;
+        transform: rotate(180deg);
+      }
+
+      &__right {
+        right: -1.5rem;
+      }
     }
 
-    &::before {
+    &__left {
       background: linear-gradient(to left, rgba(255, 255, 255, 0), #FFFFFF);
       left: 0;
       top: 0;
     }
-
-    &::after {
+  
+    &__right {
       background: linear-gradient(to right, rgba(255, 255, 255, 0), #FFFFFF);
       right: 0;
       top: 0;
     }
+  }
 
+  @media screen and #{$tablet} {
+    height: 26rem;
+    margin: 4rem 0;
+  }
+
+  &_window {
+    height: inherit;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &_items {
+    display: flex;
+    gap: 2.5rem;
+    padding: 1rem;
+    position: absolute;
+    transition: transform .3s ease-out;
+    transform: translateX(0);
+  
     @media screen and #{$tablet} {
-      height: 26rem;
-      margin: 4rem 0;
+      gap: 5rem;
     }
-
   }
 }
