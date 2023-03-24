@@ -14,10 +14,11 @@ import './Carousele.scss';
 // Component
 function Carousele({ children }) {
 
-  const [ offset, setOffset ] = useState(6); // state of offset
+  const [ offset, setOffset ] = useState(6); // state of offset, initial state is 6% offset
   const [ basicOffset, setBasicOffset ] = useState(0); // basic offset for move items inside carousele (adding % in styles of element)
   const [ maxOffset, setMaxOffset ] = useState(0); // state for max offset
   const [ touchStart, setTouchStart ] = useState(0); // touch event start position
+  const [ touchEnd, setTouchEnd ] = useState(0); // touch event end position
   const [ itemsClassList, setItemsClassList ] = useState('carousele_items'); // state of items container classlist to add or remove no-transition class on touch events
 
   useEffect(() => {
@@ -56,17 +57,29 @@ function Carousele({ children }) {
 
   // On Touch Move handler to calculate and set offset on touch move event
   function onTouchMove(e) {
-    const { itemsContainerWidth } = calcWidths(); // calculate items width
+    const { carouseleWindowWidth } = calcWidths(); // calculate items width
     const currentPosition = e.targetTouches[0].clientX; // getting current position of touch event
+    setTouchEnd(currentPosition); // set end of touch event
     const positionDifference = touchStart - currentPosition; // calculate difference between start and current positions
-    const currentOffset = (positionDifference / itemsContainerWidth) * 100; // calculating current offset to use it as %
+    const currentOffset = (positionDifference / carouseleWindowWidth) * 2; // calculating current offset to use it as %
     const totalOffset = offset - currentOffset; // calculate total offset
     onSetOffset(totalOffset, maxOffset, setOffset); // set offset
   }
 
   // on touch end and cancel events removing no-transition class from items container class list
   function onTouchEnd() {
+
     setItemsClassList('carousele_items'); // remove no-transotion class on end of touch
+
+    const { carouseleWindowWidth } = calcWidths();
+    const difference = (touchStart - touchEnd) / carouseleWindowWidth * 100; // calculate differece between start and end point of touch event. we nee to use negative value because swipe must be inversed for better user expirience
+
+    if (difference < basicOffset) {
+      onSetOffset(offset + basicOffset, maxOffset, setOffset); // if difference > 10 we add basic offset to offset
+    } else if (difference > -basicOffset) {
+      onSetOffset(offset - basicOffset, maxOffset, setOffset); // if difference < 10 we decrease offset on basic offset
+    }
+
   }
 
   // Render component
