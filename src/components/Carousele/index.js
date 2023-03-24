@@ -9,6 +9,9 @@ function Carousele({ children }) {
   const [ offset, setOffset ] = useState(6); // state of offset
   const [ basicOffset, setBasicOffset ] = useState(0); // basic offset for move items inside carousele (adding % in styles of element)
   const [ maxOffset, setMaxOffset ] = useState(); // state for max offset
+  const [ itemsWidth, setItemsWidth ] = useState(0); // state of items container width
+  const [ touchStart, setTouchStart ] = useState(0); // touch event start position
+  const [ itemsClassList, setItemsClassList ] = useState('carousele_items'); // state of items container classlist to add or remove no-transition class on touch events
 
   useEffect(() => {
 
@@ -21,28 +24,34 @@ function Carousele({ children }) {
     setBasicOffset(100 / itemsCount); // for basic offset we use %, so we divide 100 on items count to take correct offset
     setMaxOffset(100 - ((carouseleWindowWidth / itemsContainerWidth) * 100)); // calculating max offset as a percentage and settin it to state
 
+    setItemsWidth(itemsContainerWidth)
+
   }, []);
 
-  function onArrowClick(direction) {
-    
-    const totalOffset = direction === 'left' ? offset + basicOffset : offset - basicOffset; // calculate total offset on arrow click
-    
-    if (totalOffset > 6) {
+  // Function to set validated offset
+  function onSetOffset(offset) {
+    if (offset > 6) {
       setOffset(6); // if calculated total offset > 10, we set offset as 10
-    } else if (totalOffset < -maxOffset - 6) {
+    } else if (offset < -maxOffset - 6) {
       setOffset(-maxOffset - 6); // if calculated total offset < minus max offset - 10, we set offset is minus maxOffset - 10;
     } else {
-      setOffset(totalOffset); // else, we set current calculated total offset
+      setOffset(offset); // else, we set current calculated total offset
     }
-
   }
 
+  // Function to make arrow elements
   function makeArrow(direction) {
 
     const baseClass = 'carousele_arrow';
     const arrowClass = `${baseClass} ${baseClass}__${direction}`;
     const imageClass = `${baseClass}_image ${baseClass}_image__${direction}`;
     let isArrowDisabled = false;
+
+    // Arrow click handler
+    function onArrowClick(direction) {
+      const totalOffset = direction === 'left' ? offset + basicOffset : offset - basicOffset; // calculate total offset on arrow click
+      onSetOffset(totalOffset);
+    }
 
     if (direction === 'left' && offset > 0) {
       isArrowDisabled = true;
@@ -62,15 +71,42 @@ function Carousele({ children }) {
     );
   }
 
+  // Make array with arrows for render
   const arrows = [ makeArrow('right'), makeArrow('left') ];
+
+  // On Touch Start handler to init start position of touch event and removing transition on items container
+  function onTouchStart(e) {
+    setTouchStart(e.targetTouches[0].clientX);
+    setItemsClassList('carousele_items no-transition');
+  }
+
+  // On Touch Move handler to calculate and set offset on touch move event
+  function onTouchMove(e) {
+    const currentPosition = e.targetTouches[0].clientX;
+    const positionDifference = touchStart - currentPosition;
+    const currentOffset = (positionDifference / itemsWidth) * 10;
+    const totalOffset = offset - currentOffset;
+    onSetOffset(totalOffset);
+  }
+
+  // on touch end and cancel events removing no-transition class from items container class list
+  function onTouchEnd() {
+    setItemsClassList('carousele_items');
+  }
 
   return (
     <div className="carousele">
-      <div className="carousele_window">
-        <div className="carousele_items" style={{transform: `translateX(${offset}%)`}}>
-          {children}
-        </div>
-        {arrows}
+      <div
+        className="carousele_window"
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+        onTouchCancel={onTouchEnd}
+      >
+          <div className={itemsClassList} style={{transform: `translateX(${offset}%)`}}>
+            {children}
+          </div>
+          {arrows}
       </div>
     </div>
   )
