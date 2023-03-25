@@ -1,9 +1,12 @@
 // Function to set validated offset
 function onSetOffset(offset, maxOffset, setOffset) {
-  if (offset > 6) {
-    setOffset(6); // if calculated total offset > 10, we set offset as 10
-  } else if (offset < -maxOffset - 6) {
-    setOffset(-maxOffset - 6); // if calculated total offset < minus max offset - 10, we set offset is minus maxOffset - 10;
+
+  const initialOffset = 6;
+
+  if (offset > initialOffset) {
+    setOffset(initialOffset); // if calculated total offset > initialOffset, we set offset as initialOffset
+  } else if (offset < -maxOffset - initialOffset) {
+    setOffset(-maxOffset - initialOffset); // if calculated total offset < minus max offset - initialOffset, we set offset is minus maxOffset - initialOffset;
   } else {
     setOffset(offset); // else, we set current calculated total offset
   }
