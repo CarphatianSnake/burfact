@@ -75,9 +75,11 @@ function Carousele({ children }) {
     const difference = (touchStart - touchEnd) / carouseleWindowWidth * 100; // calculate differece between start and end point of touch event. we nee to use negative value because swipe must be inversed for better user expirience
 
     if (difference < basicOffset) {
-      onSetOffset(offset + basicOffset, maxOffset, setOffset); // if difference > 10 we add basic offset to offset
+      const increasedOffset = offset + basicOffset;
+      onSetOffset(increasedOffset, maxOffset, setOffset); // if difference > 10 we add basic offset to offset
     } else if (difference > -basicOffset) {
-      onSetOffset(offset - basicOffset, maxOffset, setOffset); // if difference < 10 we decrease offset on basic offset
+      const decreasedOffset = offset - basicOffset
+      onSetOffset(decreasedOffset, maxOffset, setOffset); // if difference < 10 we decrease offset on basic offset
     }
 
   }
@@ -95,14 +97,14 @@ function Carousele({ children }) {
         <div className={itemsClassList} style={{transform: `translateX(${offset}%)`}}>
           {children}
         </div>
-        <Arrows
-          offset={offset}
-          basicOffset={basicOffset}
-          setOffset={setOffset}
-          onSetOffset={onSetOffset}
-          maxOffset={maxOffset}
-        />
       </div>
+      <Arrows
+        offset={offset}
+        basicOffset={basicOffset}
+        setOffset={setOffset}
+        onSetOffset={onSetOffset}
+        maxOffset={maxOffset}
+      />
     </div>
   )
 }

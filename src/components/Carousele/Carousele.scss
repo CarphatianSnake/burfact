@@ -3,6 +3,8 @@
 .carousele {
   height: 21rem;
   margin: 2rem 0;
+  overflow: hidden;
+  position: relative;
 
   &_arrow {
     height: 100%;
@@ -74,7 +76,6 @@
 
   &_window {
     height: inherit;
-    overflow: hidden;
     position: relative;
     touch-action: none;
   }
