@@ -61,7 +61,7 @@ function Carousele({ children }) {
     const currentPosition = e.targetTouches[0].clientX; // getting current position of touch event
     setTouchEnd(currentPosition); // set end of touch event
     const positionDifference = touchStart - currentPosition; // calculate difference between start and current positions
-    const currentOffset = (positionDifference / carouseleWindowWidth) * 2; // calculating current offset to use it as %
+    const currentOffset = (positionDifference / carouseleWindowWidth) * 5; // calculating current offset to use it as %
     const totalOffset = offset - currentOffset; // calculate total offset
     onSetOffset(totalOffset, maxOffset, setOffset); // set offset
   }
