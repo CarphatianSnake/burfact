@@ -1,6 +1,7 @@
 // Utils
 import { capitalize } from '../../utils/capitalize';
 import onModalClose from '../Modal/onModalClose';
+import scrollTo from '../../utils/scrollTo';
 
 // Styles
 import './Navigation.scss';
@@ -12,18 +13,16 @@ function Navigation({ setIsModalOpen }) {
 
   const navSections = navSectionsNames.map((section) => {
 
-    // handler for scroll screen to elements position
-    function scrollTo() {
-      const targetScrollTo = document.getElementById(section);
+    function onHandleClick(targetId) {
+      scrollTo(targetId);
       setIsModalOpen && onModalClose(setIsModalOpen); // if setIsModalOpen comes with props we close modal, if not - ignore this line
-      targetScrollTo && targetScrollTo.scrollIntoView({ behavior: 'smooth' }); // if target exists we scroll into it position using ID of section
     }
 
     return (
       <li
         key={section}
         className='navigation_list_item'
-        onClick={scrollTo}
+        onClick={() => onHandleClick(section)}
       >
         <span
           className='navigation_list_item_link'

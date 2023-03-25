@@ -1,3 +1,6 @@
+// Utils
+import scrollTo from '../../utils/scrollTo';
+
 // Styles
 import './Banner.scss';
 
@@ -12,7 +15,7 @@ function Banner() {
         <div className="banner_content">
           <h1>Burger Factory</h1>
           <h3 className="banner_content_small-heading">Your dreamed burger close to your locations!</h3>
-          <a href="#ingredient" className="banner_content_btn">Discover the ingredients</a>
+          <button className="banner_content_btn" onClick={() => scrollTo('ingredient')}>Discover the ingredients</button>
         </div>
         <img loading='lazy' src={bannerImage} className='banner_image' alt="Burger Factory" />
       </div>
