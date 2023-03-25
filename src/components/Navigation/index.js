@@ -1,6 +1,6 @@
 // Utils
 import { capitalize } from '../../utils/capitalize';
-import { onModalClose } from '../Modal';
+import onModalClose from '../Modal/onModalClose';
 
 // Styles
 import './Navigation.scss';
@@ -16,7 +16,7 @@ function Navigation({ setIsModalOpen }) {
     function scrollTo() {
       const targetScrollTo = document.getElementById(section);
       setIsModalOpen && onModalClose(setIsModalOpen); // if setIsModalOpen comes with props we close modal, if not - ignore this line
-      targetScrollTo && targetScrollTo.scrollIntoView({behavior: 'smooth'}); // if target exists we scroll into it position using ID of section
+      targetScrollTo && targetScrollTo.scrollIntoView({ behavior: 'smooth' }); // if target exists we scroll into it position using ID of section
     }
 
     return (

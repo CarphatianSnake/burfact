@@ -2,14 +2,11 @@
 import Navigation from '../Navigation';
 import OrderNow from '../OrderNow';
 
+// Utils
+import onModalClose from './onModalClose';
+
 // Styles
 import './Modal.scss';
-
-// Handler for closing modal. Exported to use at Navigation component
-export function onModalClose(setIsModalOpen) {
-  setIsModalOpen(false);
-  document.body.classList.remove('block-scroll');
-}
 
 // Component
 function Modal({ isModalOpen, setIsModalOpen }) {
